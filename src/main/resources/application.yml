@@ -1,0 +1,27 @@
+quarkus:
+  application:
+    name: ergo-user-management-service
+
+  http:
+    port: 9187
+
+  datasource:
+    db-kind: postgresql
+    jdbc:
+      driver: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/ergoUserManagement
+    username: postgres
+    password: abcd@1234
+
+  hibernate-orm:
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+    database:
+      generation: update
+
+eureka:
+  client:
+    service-url: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+    prefer-ip-address: true
+    instance-hostname: localhost
